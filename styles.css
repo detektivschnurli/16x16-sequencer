@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono&display=swap');
+
+:root {
+    --bg-color: #dddddd;
+    --txt-color: #000000;
+    --green: #0CCA4A;
+    --red: #F33B16;
+    --orange: #FDAD0D;
+    --blue: #5438DC;
+    font-family: 'Martian Mono', monospace;
+}
+
+::selection {
+    background-color: var(--txt-color);
+    color: var(--bg-color);
+}
+
+body {
+    background-color: var(--bg-color);
+    margin: 16px;
+}
+
+body.dark {
+    --bg-color: #000000;
+    --txt-color: #dddddd;
+}
+
+h1,
+h2,
+input {
+    font-size: 15px;
+    font-weight: normal;
+}
+
+h1,
+h2 {
+    margin: 0 0 8px 0;
+}
+
+label {
+    margin-right: 12px;
+}
+
+input {
+    font-family: 'Martian Mono', monospace;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    margin-right: 24px;
+}
+
+input:focus {
+    background-color: var(--txt-color);
+    color: var(--bg-color);
+}
+
+.flex {
+    display: flex;
+}
+
+.settings {
+    margin-bottom: 8px;
+}
+
+.controls,
+.block-settings div {
+    margin-bottom: 16px;
+    gap: 4px;
+}
+
+.controls>div {
+    aspect-ratio: 1/1;
+    width: 24px;
+    cursor: pointer;
+}
+
+.controls>div:hover {
+    outline: solid 2px var(--txt-color);
+}
+
+.block-settings input[type="radio"] {
+    appearance: none;
+    background-size: contain;
+    font: inherit;
+    color: currentColor;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.block-settings input[type="radio"]:hover {
+    outline: 2px solid var(--txt-color);
+}
+
+.block-settings input[type="radio"]:checked {
+    background-color: var(--txt-color);
+}
+
+input[value="start"] {
+    background-image: url(blocks/start.svg);
+}
+
+input[value="pass"] {
+    background-image: url(blocks/pass.svg);
+}
+
+input[value="split"] {
+    background-image: url(blocks/split.svg);
+}
+
+input[value="stop"] {
+    background-image: url(blocks/stop.svg);
+}
+
+.block-settings input[value="erase"] {
+    background-image: url(icons/icon_erase.svg);
+    margin-left: 16px;
+}
+
+input[value="edit"] {
+    background-image: url(icons/icon_edit.svg);
+}
+
+#btnPlayPause {
+    background-image: url(icons/icon_play.svg);
+}
+
+#btnPlayPause.active {
+    background-image: url(icons/icon_pause.svg);
+}
+
+#btnStop {
+    background-image: url(icons/icon_stop.svg);
+}
+
+#gridContainer {
+    display: grid;
+    grid-template-columns: repeat(16, 48px);
+    grid-template-rows: repeat(16, 48px);
+    outline: solid 2px var(--txt-color);
+    margin-right: 16px;
+}
+
+#gridContainer>div {
+    aspect-ratio: 1 / 1;
+    outline: solid 1px var(--txt-color);
+    cursor: pointer;
+}
+
+#gridContainer>div.active {
+    background-color: black;
+}
+
+#gridContainer>div.start {
+    background-image: url(blocks/start.svg);
+}
+
+#gridContainer>div.pass {
+    background-image: url(blocks/pass.svg);
+}
+
+#gridContainer>div.split {
+    background-image: url(blocks/split.svg);
+}
+
+#gridContainer>div.stop {
+    background-image: url(blocks/stop.svg);
+}
